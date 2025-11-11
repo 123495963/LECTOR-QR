@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escáner QR Universal - UTB</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="utb-logo.png" alt="Logo UTB" class="logo" onerror="this.style.display='none'">
+            <h1>Universidad Técnica de Babahoyo</h1>
+            <p>Sistema de escaneo QR universal</p>
+        </div>
+        
+        <div class="scanner-section">
+            <div class="scanner-container">
+                <div id="camera-view" class="camera-view">
+                    <video id="qr-video" playsinline></video>
+                    <div class="scan-frame"></div>
+                </div>
+                
+                <div class="scanner-controls">
+                    <button id="btn-activate-camera" class="btn-primary">
+                        🎥 Activar Cámara
+                    </button>
+                    <button id="btn-switch-camera" class="btn-secondary" disabled>
+                        🔄 Cambiar Cámara
+                    </button>
+                </div>
+                
+                <div class="file-upload">
+                    <label for="file-input" class="btn-secondary">
+                        📁 Subir Imagen QR
+                    </label>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+            </div>
+            
+            <div id="camera-status" class="status-message">
+                <p>Presiona "Activar Cámara" para comenzar</p>
+            </div>
+        </div>
+        
+        <div id="qr-result" class="result-container">
+            <!-- Aquí se mostrarán los resultados del escaneo -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="scaneo.js"></script>
+</body>
+</html>
